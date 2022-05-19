@@ -82,4 +82,5 @@ group :development, :test do
 end
 
 gem 'rubocop'
-gem 'rubocop-rails', require: false
+gem 'rubocop-rails'
+gem 'rubocop-rspec'
