@@ -80,3 +80,6 @@ end
 group :development, :test do
   gem 'rspec-rails'
 end
+
+gem 'rubocop'
+gem 'rubocop-rails', require: false
