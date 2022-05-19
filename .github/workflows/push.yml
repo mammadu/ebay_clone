@@ -20,8 +20,8 @@ jobs:
         run: bundle exec rubocop
       - name: setup postgresql
         run: |
-        sudo apt install postgresql
-        sudo service postgresql start
-        sudo -u postgres createuser --superuser "$USER"
+          sudo apt install postgresql
+          sudo service postgresql start
+          sudo -u postgres createuser --superuser "$USER"
       - name: run tests
         run: bundle exec rspec
