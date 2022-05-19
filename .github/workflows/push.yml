@@ -23,5 +23,7 @@ jobs:
           sudo apt install postgresql
           sudo service postgresql start
           sudo -u postgres createuser --superuser "$USER"
+      - name: create database
+        run: bin/rails db:create
       - name: run tests
         run: bundle exec rspec
