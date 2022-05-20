@@ -2,6 +2,7 @@ AllCops:
   NewCops: enable
   Exclude:
     - Guardfile
+    - db/**/*
 
 require:
   - rubocop-rails
