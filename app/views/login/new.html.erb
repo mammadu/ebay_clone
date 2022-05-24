@@ -2,3 +2,10 @@
 
 <div> Please sign in </div>
 
+<div>
+    <%= form_with do |form| %>
+        <%= form.label :query, "email" %>
+        <%= form.email_field :address %>
+        <%= form.submit "login" %>
+    <% end %>
+</div>
