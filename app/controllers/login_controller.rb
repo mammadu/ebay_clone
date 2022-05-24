@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-    def index
+    def new
         
     end
 end
