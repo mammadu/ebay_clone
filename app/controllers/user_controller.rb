@@ -2,6 +2,6 @@
 
 class UserController < ApplicationController
   def index
-    @user = User.all
+    puts session[:current_user]
   end
 end
