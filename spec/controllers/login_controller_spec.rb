@@ -7,5 +7,10 @@ RSpec.describe LoginController do
             post :create, params: { email: 'email@gmail.com' }
             expect(session[:current_user]).to eq 'email@gmail.com'
         end
+
+        it "redirects to the user index page" do
+            response = post :create, params: { email: 'email@gmail.com' }
+            expect(response).to redirect_to(user_index_path)
+        end
     end
 end
