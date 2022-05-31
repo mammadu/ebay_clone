@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 class LoginController < ApplicationController
-  def new; end
 
   def create
-    session[:current_user] = params['address']
-    redirect_to user_index_path
+    email_address = params['address']
+    if is_user(email_address)
+      session[:current_user] = params['address']
+      redirect_to user_index_url
+    else
+      redirect_to root_path
+    end
+
   end
 
   private
