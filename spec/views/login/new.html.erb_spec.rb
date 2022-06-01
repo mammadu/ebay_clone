@@ -10,7 +10,12 @@ RSpec.describe 'login/new' do
 
       render # creates a page and assigns it to a variable
 
-      expect(rendered).to have_css('input')
+      expect(rendered).to have_button('login')
+    end
+
+    it 'has a button to create an account' do
+      render
+      expect(rendered).to have_button('create account')
     end
   end
 end

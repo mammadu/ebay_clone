@@ -17,4 +17,6 @@ class LoginController < ApplicationController
   def is_user(email_address)
     return User.find_by email: email_address
   end
+  #put in an interactor object?
+  #maybe could be in User model, so it can be called in multiple places
 end

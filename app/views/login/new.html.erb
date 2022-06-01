@@ -10,6 +10,10 @@
     <% end %>
 </div>
 
+<div>
+    <%= button_to("create account", options={action: "new", controller: "user"}, html_options={method: :get}) %>
+</div>
+
 <% flash.each do |type, msg| %>
     <div>
         <%= msg %>

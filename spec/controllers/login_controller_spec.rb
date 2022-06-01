@@ -8,10 +8,6 @@ RSpec.describe LoginController do
     @user = User.create(username: @username, email: @email, name: @name) # add item to database
   end
 
-  after(:all) do
-    @user = User.destroy_all
-  end
-
   # public method tests
   describe 'POST create' do
     it 'creates a session' do
@@ -23,14 +19,19 @@ RSpec.describe LoginController do
       response = post :create, params: { address: @email }
       expect(response).to redirect_to(user_index_url)
     end
+
+    it 'creates a flash warning if login information is incorrect' do
+      post :create, params: { address: 'incorrect_email@email.com' }
+      expect(flash).to be_present
+    end
   end
 
   # private method tests
-  describe 'Private methods' do
-    it 'checks if the user email is in the account database' do
-      login_controller = LoginController.new
-      result = login_controller.send(:is_user, @email)
-      expect(result[:email]).to eq(@email)
-    end
-  end
+  # describe 'Private methods' do
+  #   it 'checks if the user email is in the account database' do
+  #     login_controller = LoginController.new
+  #     result = login_controller.send(:is_user, @email)
+  #     expect(result[:email]).to eq(@email)
+  #   end
+  # end
 end
