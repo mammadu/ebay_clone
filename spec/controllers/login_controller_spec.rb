@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe LoginController do
   before(:each) do
+    @name = 'test_name'
     @username = 'test_username'
     @email = 'email@gmail.com'
-    @name = 'test_name'
-    @user = User.create(username: @username, email: @email, name: @name) # add item to database
+    @user = User.create(name: @name, username: @username, email: @email) # add item to database
   end
 
   # public method tests
