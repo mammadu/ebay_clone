@@ -26,12 +26,4 @@ RSpec.describe LoginController do
     end
   end
 
-  # private method tests
-  # describe 'Private methods' do
-  #   it 'checks if the user email is in the account database' do
-  #     login_controller = LoginController.new
-  #     result = login_controller.send(:is_user, @email)
-  #     expect(result[:email]).to eq(@email)
-  #   end
-  # end
 end

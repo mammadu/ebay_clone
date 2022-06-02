@@ -2,9 +2,14 @@
 
 class UserController < ApplicationController
   def index
-    puts session[:current_user]
   end
 
   def new
+    @user = User.new
+  end
+
+  def create
+    # if @user.save
+    # end
   end
 end
