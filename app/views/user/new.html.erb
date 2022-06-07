@@ -1,5 +1,5 @@
 <div>
-    <%= form_with model: @user do |form| %>
+    <%= form_with(url: user_index_path, method: "post") do |form| %>
         <div>
             <%= form.label :name %>
             <%= form.text_field :name %>
@@ -16,3 +16,9 @@
 <% end %>
 
 </div>
+
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
