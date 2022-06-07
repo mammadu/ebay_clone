@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  incorrect_login: 'Login information incorrect'
+  incorrect_account_creation: 'please fill out all fields'

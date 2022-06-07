@@ -4,8 +4,8 @@
 
 <div>
     <%= form_with(url: login_index_path, method: "post") do |form| %>
-        <%= form.label :address, "email" %>
-        <%= form.email_field :address %>
+        <%= form.label :email, "email" %>
+        <%= form.email_field :email %>
         <%= form.submit "login" %>
     <% end %>
 </div>

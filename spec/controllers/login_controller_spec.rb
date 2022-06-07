@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe LoginController do
@@ -11,12 +13,12 @@ RSpec.describe LoginController do
   # public method tests
   describe 'POST create' do
     it 'creates a session' do
-      post :create, params: { address: @email }
+      post :create, params: { email: @email }
       expect(session[:current_user]).to eq @email
     end
 
     it 'redirects to the user index page' do
-      response = post :create, params: { address: @email }
+      response = post :create, params: { email: @email }
       expect(response).to redirect_to(user_index_url)
     end
 
@@ -25,5 +27,4 @@ RSpec.describe LoginController do
       expect(flash).to be_present
     end
   end
-
 end

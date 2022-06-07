@@ -42,9 +42,8 @@ RSpec.describe User, type: :model do
   end
 
   it 'does not allow save repeat email addresses' do
-    user1 = User.create(@test_row)
+    User.create(@test_row)
     user2 = User.create(@test_row)
     expect(user2.valid?).to eq(false)
   end
-
 end
