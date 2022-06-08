@@ -97,6 +97,8 @@ GEM
       reline (>= 0.2.7)
     diff-lcs (1.5.0)
     digest (3.1.0)
+    email_validator (2.2.3)
+      activemodel
     erubi (1.10.0)
     ffi (1.15.5)
     formatador (1.1.0)
@@ -302,6 +304,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   debug
+  email_validator
   guard-rspec
   importmap-rails
   jbuilder

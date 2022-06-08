@@ -17,8 +17,11 @@
 
 </div>
 
-<% flash.each do |type, msg| %>
+<% flash.each do |type, message| %>
     <div>
-        <%= msg %>
+        <% message.each do |msg| %>
+            <%= msg %>
+            <br>
+        <% end %>
     </div>
 <% end %>

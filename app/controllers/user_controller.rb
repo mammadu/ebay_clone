@@ -13,7 +13,8 @@ class UserController < ApplicationController
       session[:current_user] = user_params[:email]
       redirect_to user_index_path
     else
-      flash[:alert] = I18n.t 'incorrect_account_creation'
+      message = @user.errors.full_messages
+      flash[:alert] = message
       redirect_to new_user_path
     end
   end
