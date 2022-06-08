@@ -81,6 +81,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+gem 'email_validator'
 gem 'rubocop'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'
