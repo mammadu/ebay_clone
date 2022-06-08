@@ -14,3 +14,7 @@ Style/Documentation:
 Metrics/BlockLength:
   Exclude:
     - 'spec/**/*.rb'
+
+Naming/PredicateName:
+  Exclude:
+    - app/models/user.rb

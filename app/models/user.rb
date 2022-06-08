@@ -5,7 +5,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, email: true
 
-  def user?(email_address)
+  def self.get_user(email_address)
     User.find_by email: email_address
   end
 end

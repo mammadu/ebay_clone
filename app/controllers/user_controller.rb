@@ -2,7 +2,7 @@
 
 class UserController < ApplicationController
   def index
-    @user = User.find_by(email: session[:current_user])
+    @user = User.get_user(session[:current_user])
   end
 
   def new; end
