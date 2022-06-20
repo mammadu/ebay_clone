@@ -10,7 +10,7 @@ RSpec.describe LoginController do
       email: 'email@gmail.com',
       password: 'test_pass'
     }
-    @user = User.create( @test_row) # add item to database
+    @user = User.create(@test_row) # add item to database
   end
 
   # public method tests
