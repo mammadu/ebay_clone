@@ -7,8 +7,13 @@ RSpec.describe User, type: :model do
     @test_row = {
       name: 'test_name',
       username: 'test_username',
-      email: 'email@gmail.com'
+      email: 'email@gmail.com',
+      password: 'test_pass'
     }
+  end
+
+  after(:each) do
+    User.destroy_all
   end
 
   it 'has a name column' do
@@ -21,6 +26,10 @@ RSpec.describe User, type: :model do
 
   it 'has a email column' do
     expect(User.column_names).to include('email')
+  end
+
+  it 'has a password_digest column' do
+    expect(User.column_names).to include('password_digest')
   end
 
   it 'requires a a name to save to the database' do
