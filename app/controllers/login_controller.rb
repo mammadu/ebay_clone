@@ -11,7 +11,4 @@ class LoginController < ApplicationController
       redirect_to root_url
     end
   end
-
-  # put in an interactor object?
-  # maybe could be in User model, so it can be called in multiple places
 end
