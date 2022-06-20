@@ -3,7 +3,8 @@
 class LoginController < ApplicationController
   def create
     email_address = params['email']
-    if User.get_user(email_address)
+    password = params['password']
+    if User.authenticate_user(email_address, password)
       session[:current_user] = params['email']
       redirect_to user_index_url
     else

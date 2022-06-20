@@ -32,20 +32,26 @@ RSpec.describe User, type: :model do
     expect(User.column_names).to include('password_digest')
   end
 
-  it 'requires a a name to save to the database' do
+  it 'requires a name to save to the database' do
     @test_row[:name] = nil
     user = User.create(@test_row)
     expect(user.valid?).to eq(false)
   end
 
-  it 'requires a a username to save to the database' do
+  it 'requires a username to save to the database' do
     @test_row[:username] = nil
     user = User.create(@test_row)
     expect(user.valid?).to eq(false)
   end
 
-  it 'requires a a email to save to the database' do
+  it 'requires an email to save to the database' do
     @test_row[:email] = nil
+    user = User.create(@test_row)
+    expect(user.valid?).to eq(false)
+  end
+
+  it 'requires a password to save to the database' do
+    @test_row[:password] = nil
     user = User.create(@test_row)
     expect(user.valid?).to eq(false)
   end

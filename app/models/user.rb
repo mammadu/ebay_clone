@@ -9,4 +9,9 @@ class User < ApplicationRecord
   def self.get_user(email_address)
     User.find_by email: email_address
   end
+
+  def self.authenticate_user(email_address, password)
+    user = get_user(email_address)
+    return user if user&.authenticate(password)
+  end
 end
