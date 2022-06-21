@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates :email, email: true
   has_secure_password
+  has_many :items, dependent: :destroy, foreign_key: 'seller_id', inverse_of: :user
 
   def self.get_user(email_address)
     User.find_by email: email_address
