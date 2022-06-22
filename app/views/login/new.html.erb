@@ -6,6 +6,9 @@
     <%= form_with(url: login_index_path, method: "post") do |form| %>
         <%= form.label :email, "email" %>
         <%= form.email_field :email %>
+        <br>
+        <%= form.label :password, "password" %>
+        <%= form.password_field :password %>
         <%= form.submit "login" %>
     <% end %>
 </div>
