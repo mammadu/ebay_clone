@@ -15,7 +15,7 @@ RSpec.describe LoginController do
 
   # public method tests
   describe 'POST create' do
-    it 'creates a session' do
+    it 'creates a session given a matching email and password' do
       post :create, params: { email: @test_row[:email], password: @test_row[:password] }
       expect(session[:current_user]).to eq @test_row[:email]
     end
