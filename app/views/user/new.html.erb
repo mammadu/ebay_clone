@@ -1,0 +1,31 @@
+<div>
+    <%= form_with(url: user_index_path, method: "post") do |form| %>
+        <div>
+            <%= form.label :name %>
+            <%= form.text_field :name %>
+        </div>
+        <div>
+            <%= form.label :username %>
+            <%= form.text_field :username %>
+        </div>
+        <div>
+            <%= form.label :email %>
+            <%= form.text_field :email %>
+        </div>
+        <div>
+            <%= form.label :password %>
+            <%= form.text_field :password %>
+        </div>
+        <%= form.submit "confirm new account" %>
+<% end %>
+
+</div>
+
+<% flash.each do |type, message| %>
+    <div>
+        <% message.each do |msg| %>
+            <%= msg %>
+            <br>
+        <% end %>
+    </div>
+<% end %>

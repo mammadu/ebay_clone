@@ -1,0 +1,24 @@
+<h1>Welcome to Ebay</h1>
+
+<div> Please sign in </div>
+
+<div>
+    <%= form_with(url: login_index_path, method: "post") do |form| %>
+        <%= form.label :email, "email" %>
+        <%= form.email_field :email %>
+        <br>
+        <%= form.label :password, "password" %>
+        <%= form.password_field :password %>
+        <%= form.submit "login" %>
+    <% end %>
+</div>
+
+<div>
+    <%= button_to("create account", options={action: "new", controller: "user"}, html_options={method: :get}) %>
+</div>
+
+<% flash.each do |type, msg| %>
+    <div>
+        <%= msg %>
+    </div>
+<% end %>
