@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>Item name</th>
+        <th>Current bid</th>
+        <th>Seller</th>
+    </tr>
+    <% for item in @item do %>
+        <tr>
+            <td><%= item.name %></td>
+            <td><%= item.highest_bid %></td>
+            <td><%= User.find_by(id: item.seller_id).username %></td>
+        </tr>
+    <% end %>
+</table>
